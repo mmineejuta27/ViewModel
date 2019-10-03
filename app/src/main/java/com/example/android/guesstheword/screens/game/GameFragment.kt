@@ -95,9 +95,6 @@ class GameFragment : Fragment() {
 
 
 
-
-
-
     /** Methods for updating the UI **/
 
 
