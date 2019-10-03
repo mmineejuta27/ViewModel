@@ -57,17 +57,8 @@ class GameFragment : Fragment() {
         viewModel.nextWord()
 
         binding.gameViewModel = viewModel
-//        binding.correctButton.setOnClickListener { onCorrect() }
-//        binding.skipButton.setOnClickListener { onSkip() }
-//        binding.endGameButton.setOnClickListener { onEndGame() }
+        binding.lifecycleOwner = this
 
-        viewModel.score.observe(this, Observer { newScore ->
-            binding.scoreText.text = newScore.toString()
-        })
-
-        viewModel.word.observe(this, Observer { newWord ->
-            binding.wordText.text = newWord
-        })
 
         viewModel.eventGameFinish.observe(this, Observer { hasFinish ->
             if (hasFinish){
@@ -79,15 +70,6 @@ class GameFragment : Fragment() {
 
     }
 
-//    private fun onSkip() {
-//        viewModel.onSkip()
-//
-//    }
-//
-//    private fun onCorrect() {
-//        viewModel.onCorrect()
-//
-//    }
 
     /**
      * Resets the list of words and randomizes the order
@@ -97,10 +79,6 @@ class GameFragment : Fragment() {
 
     /** Methods for updating the UI **/
 
-
-//    private fun onEndGame() {
-//        gameFinished()
-//    }
 
     private fun gameFinished() {
         Toast.makeText(activity, "Game has just finished", Toast.LENGTH_SHORT).show()
