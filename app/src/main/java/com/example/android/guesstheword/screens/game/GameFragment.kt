@@ -56,6 +56,7 @@ class GameFragment : Fragment() {
         viewModel.resetList()
         viewModel.nextWord()
 
+        binding.gameViewModel = viewModel
         binding.correctButton.setOnClickListener { onCorrect() }
         binding.skipButton.setOnClickListener { onSkip() }
         binding.endGameButton.setOnClickListener { onEndGame() }
