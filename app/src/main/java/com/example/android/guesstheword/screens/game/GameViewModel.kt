@@ -96,4 +96,8 @@ class GameViewModel : ViewModel() {
         _evenGameFinish.value = true
     }
 
+    fun  onGameFinishComplete() {
+        _evenGameFinish.value = false
+    }
+
 }
